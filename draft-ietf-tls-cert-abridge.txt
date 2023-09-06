@@ -4,12 +4,12 @@
 
 Transport Layer Security                                      D. Jackson
 Internet-Draft                                                   Mozilla
-Intended status: Experimental                                6 July 2023
-Expires: 7 January 2024
+Intended status: Experimental                           6 September 2023
+Expires: 9 March 2024
 
 
               Abridged Compression for WebPKI Certificates
-                 draft-jackson-tls-cert-abridge-latest
+                   draft-ietf-tls-cert-abridge-latest
 
 Abstract
 
@@ -28,10 +28,9 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at
-   https://dennisjackson.github.io/draft-jackson-tls-cert-abridge/draft-
-   jackson-tls-cert-abridge.html.  Status information for this document
-   may be found at https://datatracker.ietf.org/doc/draft-jackson-tls-
-   cert-abridge/.
+   https://tlswg.github.io/draft-ietf-tls-cert-abridge/draft-ietf-tls-
+   cert-abridge.html.  Status information for this document may be found
+   at https://datatracker.ietf.org/doc/draft-ietf-tls-cert-abridge/.
 
    Discussion of this document takes place on the Transport Layer
    Security Working Group mailing list (mailto:tls@ietf.org), which is
@@ -39,7 +38,7 @@ About This Document
    at https://www.ietf.org/mailman/listinfo/tls/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/dennisjackson/draft-jackson-tls-cert-abridge.
+   https://github.com/tlswg/draft-ietf-tls-cert-abridge.
 
 Status of This Memo
 
@@ -56,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 7 January 2024.
+   This Internet-Draft will expire on 9 March 2024.
 
 Copyright Notice
 
@@ -744,10 +743,11 @@ Table of Contents
    [QUICStudy]
               Nawrocki, M., Tehrani, P., Hiesgen, R., Mücke, J.,
               Schmidt, T., and M. Wählisch, "On the interplay between
-              TLS certificates and QUIC performance", Proceedings of the
-              18th International Conference on emerging Networking
-              EXperiments and Technologies, DOI 10.1145/3555050.3569123,
-              November 2022, <https://doi.org/10.1145/3555050.3569123>.
+              TLS certificates and QUIC performance", ACM, Proceedings
+              of the 18th International Conference on emerging
+              Networking EXperiments and Technologies,
+              DOI 10.1145/3555050.3569123, November 2022,
+              <https://doi.org/10.1145/3555050.3569123>.
 
    [RFC7924]  Santesson, S. and H. Tschofenig, "Transport Layer Security
               (TLS) Cached Information Extension", RFC 7924,
@@ -772,9 +772,11 @@ Table of Contents
               tls-scas-latest-03>.
 
    [SCAStudy] Kampanakis, P. and M. Kallitsis, "Faster Post-Quantum TLS
-              Handshakes Without Intermediate CA Certificates", Cyber
-              Security, Cryptology, and Machine Learning pp. 337-355,
-              DOI 10.1007/978-3-031-07689-3_25, 2022,
+              Handshakes Without Intermediate CA Certificates", Springer
+              International Publishing, Cyber Security, Cryptology, and
+              Machine Learning pp. 337-355,
+              DOI 10.1007/978-3-031-07689-3_25, ISBN ["9783031076886",
+              "9783031076893"], 2022,
               <https://doi.org/10.1007/978-3-031-07689-3_25>.
 
    [ZstdImpl] Facebook, "ZStandard (Zstd)", 5 June 2023,

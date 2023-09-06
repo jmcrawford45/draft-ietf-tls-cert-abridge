@@ -9,17 +9,17 @@
 <meta content="
        This draft defines a new TLS Certificate Compression scheme which uses a shared dictionary of root and intermediate WebPKI certificates. The scheme smooths the transition to post-quantum certificates by eliminating the root and intermediate certificates from the TLS certificate chain without impacting trust negotiation. It also delivers better compression than alternative proposals whilst ensuring fair treatment for both CAs and website operators. It may also be useful in other applications which store certificate chains, e.g. Certificate Transparency logs. 
     " name="description">
-<meta content="xml2rfc 3.17.4" name="generator">
-<meta content="draft-jackson-tls-cert-abridge-latest" name="ietf.draft">
+<meta content="xml2rfc 3.18.0" name="generator">
+<meta content="draft-ietf-tls-cert-abridge-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.17.4
-    Python 3.11.4
+  xml2rfc 3.18.0
+    Python 3.11.5
     ConfigArgParse 1.5.3
     google-i18n-address 3.1.0
     intervaltree 3.1.0
     Jinja2 3.1.2
-    lxml 4.9.2
-    platformdirs 3.8.0
+    lxml 4.9.3
+    platformdirs 3.10.0
     pycountry 22.3.5
     PyYAML 6.0
     requests 2.31.0
@@ -27,7 +27,7 @@
     six 1.16.0
     wcwidth 0.2.6
 -->
-<link href="draft-jackson-tls-cert-abridge.xml" rel="alternate" type="application/rfc+xml">
+<link href="draft-ietf-tls-cert-abridge.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
 <style type="text/css">@font-face {
   font-family: 'Lora';
@@ -1046,11 +1046,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Abridged Certs</td>
-<td class="right">July 2023</td>
+<td class="right">September 2023</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Jackson</td>
-<td class="center">Expires 7 January 2024</td>
+<td class="center">Expires 9 March 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1060,15 +1060,15 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dt class="label-workgroup">Workgroup:</dt>
 <dd class="workgroup">Transport Layer Security</dd>
 <dt class="label-internet-draft">Internet-Draft:</dt>
-<dd class="internet-draft">draft-jackson-tls-cert-abridge-latest</dd>
+<dd class="internet-draft">draft-ietf-tls-cert-abridge-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2023-07-06" class="published">6 July 2023</time>
+<time datetime="2023-09-06" class="published">6 September 2023</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Experimental</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-01-07">7 January 2024</time></dd>
+<dd class="expires"><time datetime="2024-03-09">9 March 2024</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1089,15 +1089,15 @@ svg :is([fill="white"], [fill^="#fff"]) {
       </h2>
 <p id="section-note.1-1">This note is to be removed before publishing as an RFC.<a href="#section-note.1-1" class="pilcrow">¶</a></p>
 <p id="section-note.1-2">
-        The latest revision of this draft can be found at <span><a href="https://dennisjackson.github.io/draft-jackson-tls-cert-abridge/draft-jackson-tls-cert-abridge.html">https://dennisjackson.github.io/draft-jackson-tls-cert-abridge/draft-jackson-tls-cert-abridge.html</a></span>.
-        Status information for this document may be found at <span><a href="https://datatracker.ietf.org/doc/draft-jackson-tls-cert-abridge/">https://datatracker.ietf.org/doc/draft-jackson-tls-cert-abridge/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
+        The latest revision of this draft can be found at <span><a href="https://tlswg.github.io/draft-ietf-tls-cert-abridge/draft-ietf-tls-cert-abridge.html">https://tlswg.github.io/draft-ietf-tls-cert-abridge/draft-ietf-tls-cert-abridge.html</a></span>.
+        Status information for this document may be found at <span><a href="https://datatracker.ietf.org/doc/draft-ietf-tls-cert-abridge/">https://datatracker.ietf.org/doc/draft-ietf-tls-cert-abridge/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
 <p id="section-note.1-3">
         Discussion of this document takes place on the
         Transport Layer Security Working Group mailing list (<span><a href="mailto:tls@ietf.org">mailto:tls@ietf.org</a></span>),
         which is archived at <span><a href="https://mailarchive.ietf.org/arch/browse/tls/">https://mailarchive.ietf.org/arch/browse/tls/</a></span>.
         Subscribe at <span><a href="https://www.ietf.org/mailman/listinfo/tls/">https://www.ietf.org/mailman/listinfo/tls/</a></span>.<a href="#section-note.1-3" class="pilcrow">¶</a></p>
 <p id="section-note.1-4">Source for this draft and an issue tracker can be found at
-        <span><a href="https://github.com/dennisjackson/draft-jackson-tls-cert-abridge">https://github.com/dennisjackson/draft-jackson-tls-cert-abridge</a></span>.<a href="#section-note.1-4" class="pilcrow">¶</a></p>
+        <span><a href="https://github.com/tlswg/draft-ietf-tls-cert-abridge">https://github.com/tlswg/draft-ietf-tls-cert-abridge</a></span>.<a href="#section-note.1-4" class="pilcrow">¶</a></p>
 </section>
 <div id="status-of-memo">
 <section id="section-boilerplate.1">
@@ -1118,7 +1118,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 7 January 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 9 March 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1686,7 +1686,7 @@ If the compressed certificate chain cannot be parsed (e.g. due to incorrect leng
 <dd class="break"></dd>
 <dt id="QUICStudy">[QUICStudy]</dt>
         <dd>
-<span class="refAuthor">Nawrocki, M.</span>, <span class="refAuthor">Tehrani, P.</span>, <span class="refAuthor">Hiesgen, R.</span>, <span class="refAuthor">Mücke, J.</span>, <span class="refAuthor">Schmidt, T.</span>, and <span class="refAuthor">M. Wählisch</span>, <span class="refTitle">"On the interplay between TLS certificates and QUIC performance"</span>, <span class="seriesInfo">Proceedings of the 18th International Conference on emerging Networking EXperiments and Technologies</span>, <span class="seriesInfo">DOI 10.1145/3555050.3569123</span>, <time datetime="2022-11" class="refDate">November 2022</time>, <span>&lt;<a href="https://doi.org/10.1145/3555050.3569123">https://doi.org/10.1145/3555050.3569123</a>&gt;</span>. </dd>
+<span class="refAuthor">Nawrocki, M.</span>, <span class="refAuthor">Tehrani, P.</span>, <span class="refAuthor">Hiesgen, R.</span>, <span class="refAuthor">Mücke, J.</span>, <span class="refAuthor">Schmidt, T.</span>, and <span class="refAuthor">M. Wählisch</span>, <span class="refTitle">"On the interplay between TLS certificates and QUIC performance"</span>, <span class="refContent">ACM</span>, <span class="seriesInfo">Proceedings of the 18th International Conference on emerging Networking EXperiments and Technologies</span>, <span class="seriesInfo">DOI 10.1145/3555050.3569123</span>, <time datetime="2022-11" class="refDate">November 2022</time>, <span>&lt;<a href="https://doi.org/10.1145/3555050.3569123">https://doi.org/10.1145/3555050.3569123</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC7924">[RFC7924]</dt>
         <dd>
@@ -1706,7 +1706,7 @@ If the compressed certificate chain cannot be parsed (e.g. due to incorrect leng
 <dd class="break"></dd>
 <dt id="SCAStudy">[SCAStudy]</dt>
         <dd>
-<span class="refAuthor">Kampanakis, P.</span> and <span class="refAuthor">M. Kallitsis</span>, <span class="refTitle">"Faster Post-Quantum TLS Handshakes Without Intermediate CA Certificates"</span>, <span class="seriesInfo">Cyber Security, Cryptology, and Machine Learning pp. 337-355</span>, <span class="seriesInfo">DOI 10.1007/978-3-031-07689-3_25</span>, <time datetime="2022" class="refDate">2022</time>, <span>&lt;<a href="https://doi.org/10.1007/978-3-031-07689-3_25">https://doi.org/10.1007/978-3-031-07689-3_25</a>&gt;</span>. </dd>
+<span class="refAuthor">Kampanakis, P.</span> and <span class="refAuthor">M. Kallitsis</span>, <span class="refTitle">"Faster Post-Quantum TLS Handshakes Without Intermediate CA Certificates"</span>, <span class="refContent">Springer International Publishing</span>, <span class="seriesInfo">Cyber Security, Cryptology, and Machine Learning pp. 337-355</span>, <span class="seriesInfo">DOI 10.1007/978-3-031-07689-3_25</span>, <span class="seriesInfo">ISBN ["9783031076886", "9783031076893"]</span>, <time datetime="2022" class="refDate">2022</time>, <span>&lt;<a href="https://doi.org/10.1007/978-3-031-07689-3_25">https://doi.org/10.1007/978-3-031-07689-3_25</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="ZstdImpl">[ZstdImpl]</dt>
       <dd>
